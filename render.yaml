@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: n8n
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: n8n start
+    envVars:
+      - key: WEBHOOK_URL
+        value: https://n8n-yourapp.onrender.com/  # ← Replace with your actual Render domain
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PORT
+        value: 10000
+      - key: N8N_PROTOCOL
+        value: https
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: strongpassword123
+      - key: TZ
+        value: Asia/Kolkata
